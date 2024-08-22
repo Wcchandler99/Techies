@@ -107,20 +107,279 @@ CSS for styling, and JavaScript for functionality to ensure an immersive and int
 experience.
 """,
 
-Pure2048_game_specifications = """
-The client has requested the development of a simple 2048 game featuring a
-standard 4x4 game board. The primary objective is to maintain the classic
-essence of the 2048 gameplay while ensuring the overall user experience remains
-straightforward and engaging. The client has expressed that complexity should
-be avoided, and the game's mechanics should closely follow the traditional
-rules of 2048: players combine tiles of matching numbers to create higher-value
-tiles, ultimately aiming to achieve a tile with the number 2048. No additional
-unique features, special tiles, power-ups, or thematic elements are specified
-by the client at this time. The focus is purely on delivering a clean, simple,
-and enjoyable version of the 2048 game that adheres to the well-known and loved
-format. In conclusion, the task is to develop a classic 2048 game with a 4x4
-grid, ensuring that the resulting game is both user-friendly and faithful to
-the original design and gameplay mechanics.
+Pure2048 = """
+2048 Game Design Document
+Game Concept and Vision
+
+Overview:
+2048 is a classic single-player sliding block puzzle game. The objective is to merge tiles with the same numbers to create the highest possible number, ultimately aiming to achieve the 2048 tile. The game ends when no more moves are possible, either because the player has created the 2048 tile (winning) or the board is full and no merges are available (losing).
+
+Genre: Puzzle
+
+Theme: Numerical Merging
+
+Primary Objectives:
+
+    Combine tiles to reach the 2048 tile.
+    Keep playing to achieve even higher scores.
+
+User Interface (UI)
+
+Design and Layout:
+
+    Main Menu:
+        Play Button: Starts a new game.
+        Reset Button: Resets the current game.
+        Score Display: Shows current score.
+        Best Score Display: Shows the highest score achieved.
+        Instructions Button: Opens a popup with game rules and controls.
+
+    In-Game UI:
+        4x4 Grid: Displays game tiles.
+        Score Display: In the top-right corner, dynamically updates as the game progresses.
+        Restart Button: To restart the game at any point.
+        Background: Simple, clean design with a focus on the grid to avoid distraction.
+
+Visual Style and Aesthetic:
+
+    Clean and minimalistic design.
+    Soft colors for background and grid.
+    Bright, distinguishable colors for tiles, with each unique number represented by a different color.
+
+User Input Mechanisms
+
+Interaction Methods:
+
+    Control Scheme:
+        Keyboard:
+            Up Arrow: Moves tiles up.
+            Down Arrow: Moves tiles down.
+            Left Arrow: Moves tiles left.
+            Right Arrow: Moves tiles right.
+        Mouse/Tap (for UI only): Clicking buttons like 'Restart' or navigating the menu.
+
+Game Logic
+
+Core Gameplay Mechanics:
+
+    Tile Movement:
+        Pressing any arrow key slides all tiles in the direction of the arrow.
+        Tiles combine if they collide with another tile of the same number, forming a single tile with a value equal to their sum.
+        After each move, a new tile (2 or 4) appears in a random empty spot on the board.
+
+    Game Progression:
+        Score increases based on the value of the tiles merged.
+        The game continues until a 2048 tile is created or no valid moves remain.
+
+Win/Loss Conditions:
+
+    Winning Condition:
+        Form a tile with the number 2048.
+    Losing Condition:
+        The grid is full, and no tiles can be merged.
+
+Scoring:
+
+    Scores accumulate based on merging tiles. Each merge adds to the score the combined value of the tiles.
+
+Rules
+
+Objective:
+Combine numbered tiles to reach 2048 while maximizing the score.
+
+Controls:
+
+    Keyboard:
+        Up Arrow: Moves tiles up.
+        Down Arrow: Moves tiles down.
+        Left Arrow: Moves tiles left.
+        Right Arrow: Moves tiles right.
+
+Actions:
+
+    Move Tiles:
+        Directional arrow keys to slide tiles.
+    Combine Tiles:
+        Same-number tiles merge to form a tile with a combined value.
+
+Action Restrictions:
+
+    Tiles only move in the direction of the arrow key and only merge if possible.
+    New tiles (2 or 4) are generated in empty spaces after each move.
+
+In-Game Assets and Content
+
+Necessary Assets:
+
+    Characters: Not applicable.
+    Items:
+        Numbered Tiles: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048 (and higher).
+    Environments:
+        4x4 Grid Background.
+
+Sound Effects and Music:
+
+    Sound Effects:
+        Tile Merging Sound.
+        Tile Placement Sound.
+        Victory Sound for achieving 2048.
+    Background Music:
+        Light and unobtrusive looping track.
+
+Additional Components
+
+Unique Mechanics:
+
+    None beyond the original mechanics.
+
+Implementation Considerations
+
+Challenges:
+
+    Ensuring smooth tile movement and proper merging mechanics.
+    Balancing the randomness of new tile placement to maintain fairness.
+    Creating an engaging and responsive UI that works seamlessly across different devices.
+
+Development Focus:
+
+    High attention to the responsiveness of tile movements and merges for a smooth user experience.
+    Ensuring all animations are fluid to keep the game visually appealing and engaging.
+    Consistent updating of scores and game state.
+
+With these detailed guidelines, you should have a clear and comprehensive design plan for creating your version of the classic 2048 game. Good luck with your development!
 """,
+
+word_tetris = """
+Game Concept Writeup: Letter Tetris
+Game Concept and Vision
+Summary
+
+Letter Tetris is a unique twist on the classic Tetris game where instead of shapes, individual letters fall down into a 10x20 grid. The primary objective is to form valid horizontal words to score points. Words are scored based on the letters they contain, with more common letters giving fewer points and less common letters giving more points, similar to the Scrabble scoring system. The game ends when the stack of letters reaches the top of the screen.
+Setting and Theme
+
+    Genre: Puzzle
+    Theme: Retro, minimalist
+    Visual Style: Simple and retro with a focus on functionality. The background, letters, and the game's interface will have a minimalist aesthetic reminiscent of early video games.
+
+Primary Objectives
+
+    Form horizontal words by moving and placing falling letters.
+    Achieve the highest score possible by strategically placing letters to maximize word value.
+    Avoid stacking letters to the top of the screen to keep the game going.
+
+User Interface (UI)
+Design and Layout
+
+    Main Menu:
+        Start Game
+        How to Play / Instructions
+        High Scores
+        Settings (Volume Control)
+        Exit
+
+    Game Screen:
+        Grid: 10x20 cell layout
+        HUD: Displays current score, upcoming letter, and possibly number of words formed
+        Control UI: On-screen controls are omitted to maintain simplicity, as the game relies on keyboard input.
+
+    Game Over Screen:
+        Display final score
+        Option to restart or return to the main menu
+
+Visual Style
+
+    Grid and Letters: Clean, block-style letters with clearly legible characters.
+    Background: A plain, non-distracting color to emphasize the falling letters and grid.
+    Fonts and Colors: Retro-styled fonts with high contrast colors for visibility and retro aesthetics.
+
+User Input Mechanisms
+Controls
+
+    Keyboard:
+        Left Arrow Key: Move letter block left
+        Right Arrow Key: Move letter block right
+        Down Arrow Key: Accelerate the descent of the letter block
+
+Input Actions
+
+    Moving Letters: User uses arrow keys to navigate the falling letter to its desired position.
+    Placing Letters: Letters automatically place themselves when they hit the bottom of the grid or another letter.
+
+Game Logic
+Core Gameplay Mechanics
+
+    Falling Letters: Letters fall from the top of the grid.
+    Forming Words: Arrange falling letters to form horizontal words.
+    Clearing Words: Once a valid word is formed, it is cleared from the grid, and the player scores points based on the Scrabble score for those letters.
+
+Scoring System
+
+    Points:
+        Follows the Scrabble letter points:
+            Common letters (e.g., E, A, I, O) = 1 point,
+            Less common letters (e.g., K) = 5 points,
+            Rare letters (e.g., Z, Q) = 10 points.
+    Frequency: More common letters fall more frequently, while less common, high-point letters fall less frequently.
+    Cumulative Score: The player’s total score is a cumulative sum of the points earned for each word formed.
+
+End Conditions
+
+    Game Over: Occurs when the stack of letters reaches the top of the grid.
+
+Rules Menu
+Objectives
+
+    Primary Goal: Achieve the highest score by forming and clearing valid words.
+    Victory Conditions: Continue playing and scoring until the stack reaches the top of the screen.
+
+Controls
+
+    Arrow Keys:
+        Left: Move letter left
+        Right: Move letter right
+        Down: Speed up descent
+
+Actions
+
+    Move Left/Right: Position the falling letter.
+    Accelerate Down: Speed up the letter's descent.
+    Form Words: Align letters horizontally to create valid words based on a standard English dictionary.
+    Clear Words: Valid words are removed from the grid, and the player scores points.
+
+In-Game Assets and Content
+Necessary Assets
+
+    Letters: Stylized letter blocks from A-Z.
+    Grid: 10x20 cell grid layout.
+    HUD Elements: Score display, upcoming letter preview.
+    Background Music: Chiptunes style music track that loops during gameplay.
+    Fonts: Retro, pixelated font for UI and letters.
+
+Content
+
+    Dictionary: Standard English dictionary for word validation.
+    Scoring Table: Points assigned per letter matching the Scrabble scoring system.
+
+Additional Components
+Unique Features
+
+    Word Validation: Real-time checking of formed words against a dictionary.
+    Letter Frequency: Algorithm to ensure correct frequency of letter appearance based on their commonality in the English language.
+
+Implementation Considerations
+Development Challenges
+
+    Real-time Word Validation: Implementing an efficient algorithm to check for valid words as letters land.
+    Letter Frequency: Balancing the appearance of letters to maintain game difficulty and player engagement.
+    Smooth Controls: Ensuring smooth and responsive controls to allow precise placement of falling letters.
+
+Design Focus Areas
+
+    Gameplay Balance: Avoiding overwhelming the player with too many difficult-to-place letters while still challenging them.
+    User Experience: Maintaining a simple, clean interface that doesn’t distract from the core gameplay.
+    Music Integration: Making sure the background music enhances the ambiance without becoming monotonous.
+
+With these considerations, you have a comprehensive writeup that will guide the complete development process of your Letter Tetris game. This framework covers all necessary elements to create an engaging and balanced puzzle game that stays true to your vision.
+"""
 
 )
