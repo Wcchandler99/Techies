@@ -11,9 +11,10 @@ html5_crew:
     - html5_game_ui_engineer
     - html5_game_uinput_engineer
     - html5_game_logic_engineer
-    - html5_game_tester
-    - html5_sound_engineer
+    - html5_game_sound_engineer
     - html5_game_rules_engineer
+    - html5_game_tester
+    - html5_sound_designer
   tasks:
     - html5_game_coding
 
