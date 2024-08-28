@@ -76,7 +76,7 @@ html5_game_final:
     Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
     Read the game hierarchy file "game_desc" to understand the game specifications and details.
     Read the test_results.txt to understand the results of testing the game.
-    Have the engineer agents improve the code based off the html5_game_tester's feedback.
+    Have the engineer agents improve the code based off the test_results.
     Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
     Have the agents overwrite there work with the new code.
     For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.

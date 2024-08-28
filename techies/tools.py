@@ -10,6 +10,8 @@ from pydantic.v1 import BaseModel, Field
 from tempfile import TemporaryDirectory
 from typing import Type, List, Dict, Any, Optional
 
+import subprocess
+
 
 class ReadFileToolSchema(BaseModel):
     path: str = Field(type=str, description="The path to the file to read.")
@@ -58,6 +60,9 @@ class SaveSoundToolSchema(BaseModel):
 
 class ReadHtmlExamplesToolSchema(BaseModel):
     pass
+
+class TerminalToolSchema(BaseModel):
+    command: str = Field(type=str, description = "The terminal command to be run. ")
 
 class ReadFileTool(BaseTool):
     name: str = "read_file"
@@ -239,6 +244,26 @@ class ReadHtmlExamplesTool(BaseTool):
             return examples
         except Exception as e:
             return f"Failed to read examples: {e}"
+        
+class TerminalTool(BaseTool):
+    name: str = "terminal_tool"
+    description: str = "Run a terminal command and return the output. "
+    args_schema: Type[BaseModel] = TerminalToolSchema
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def _run(self, **kwargs) -> str:
+        command = kwargs['command']
+
+        # Force a sync to ensure all filesystem changes are flushed
+        subprocess.call('sync', shell=True)
+        
+        try:
+            output = subprocess.check_output(command, shell=True, universal_newlines=True)
+            return output
+        except subprocess.CalledProcessError as e:
+            return f"Error executing command: {e} \nCommand returned non-zero exit status {e.returncode}. Output: {e.output}"
 
 def get_all_tools():
     # base_dir = TemporaryDirectory(delete=False).name
@@ -252,7 +277,7 @@ def get_all_tools():
     tools = {}
     toolklasses = [
         ReadFileTool, BatchReadFilesTool, WriteFileTool, ListFilesTool,
-        SaveSoundTool, SearchSoundTool, ReadHtmlExamplesTool
+        SaveSoundTool, SearchSoundTool, ReadHtmlExamplesTool, TerminalTool
     ]
     for toolkls in toolklasses:
         tool = toolkls(base_dir=base_dir)
