@@ -123,4 +123,137 @@ grid, ensuring that the resulting game is both user-friendly and faithful to
 the original design and gameplay mechanics.
 """,
 
+word_tetris = """
+Game Concept Writeup: Letter Tetris
+Game Concept and Vision
+Summary
+
+Letter Tetris is a unique twist on the classic Tetris game where instead of shapes, individual letters fall down into a 10x20 grid. The primary objective is to form valid horizontal words to score points. Words are scored based on the letters they contain, with more common letters giving fewer points and less common letters giving more points, similar to the Scrabble scoring system. The game ends when the stack of letters reaches the top of the screen.
+Setting and Theme
+
+    Genre: Puzzle
+    Theme: Retro, minimalist
+    Visual Style: Simple and retro with a focus on functionality. The background, letters, and the game's interface will have a minimalist aesthetic reminiscent of early video games.
+
+Primary Objectives
+
+    Form horizontal words by moving and placing falling letters.
+    Achieve the highest score possible by strategically placing letters to maximize word value.
+    Avoid stacking letters to the top of the screen to keep the game going.
+
+User Interface (UI)
+Design and Layout
+
+    Main Menu:
+        Start Game
+        How to Play / Instructions
+        High Scores
+        Settings (Volume Control)
+        Exit
+
+    Game Screen:
+        Grid: 10x20 cell layout
+        HUD: Displays current score, upcoming letter, and possibly number of words formed
+        Control UI: On-screen controls are omitted to maintain simplicity, as the game relies on keyboard input.
+
+    Game Over Screen:
+        Display final score
+        Option to restart or return to the main menu
+
+Visual Style
+
+    Grid and Letters: Clean, block-style letters with clearly legible characters.
+    Background: A plain, non-distracting color to emphasize the falling letters and grid.
+    Fonts and Colors: Retro-styled fonts with high contrast colors for visibility and retro aesthetics.
+
+User Input Mechanisms
+Controls
+
+    Keyboard:
+        Left Arrow Key: Move letter block left
+        Right Arrow Key: Move letter block right
+        Down Arrow Key: Accelerate the descent of the letter block
+
+Input Actions
+
+    Moving Letters: User uses arrow keys to navigate the falling letter to its desired position.
+    Placing Letters: Letters automatically place themselves when they hit the bottom of the grid or another letter.
+
+Game Logic
+Core Gameplay Mechanics
+
+    Falling Letters: Letters fall from the top of the grid.
+    Forming Words: Arrange falling letters to form horizontal words.
+    Clearing Words: Once a valid word is formed, it is cleared from the grid, and the player scores points based on the Scrabble score for those letters.
+
+Scoring System
+
+    Points:
+        Follows the Scrabble letter points:
+            Common letters (e.g., E, A, I, O) = 1 point,
+            Less common letters (e.g., K) = 5 points,
+            Rare letters (e.g., Z, Q) = 10 points.
+    Frequency: More common letters fall more frequently, while less common, high-point letters fall less frequently.
+    Cumulative Score: The player’s total score is a cumulative sum of the points earned for each word formed.
+
+End Conditions
+
+    Game Over: Occurs when the stack of letters reaches the top of the grid.
+
+Rules Menu
+Objectives
+
+    Primary Goal: Achieve the highest score by forming and clearing valid words.
+    Victory Conditions: Continue playing and scoring until the stack reaches the top of the screen.
+
+Controls
+
+    Arrow Keys:
+        Left: Move letter left
+        Right: Move letter right
+        Down: Speed up descent
+
+Actions
+
+    Move Left/Right: Position the falling letter.
+    Accelerate Down: Speed up the letter's descent.
+    Form Words: Align letters horizontally to create valid words based on a standard English dictionary.
+    Clear Words: Valid words are removed from the grid, and the player scores points.
+
+In-Game Assets and Content
+Necessary Assets
+
+    Letters: Stylized letter blocks from A-Z.
+    Grid: 10x20 cell grid layout.
+    HUD Elements: Score display, upcoming letter preview.
+    Background Music: Chiptunes style music track that loops during gameplay.
+    Fonts: Retro, pixelated font for UI and letters.
+
+Content
+
+    Dictionary: Standard English dictionary for word validation.
+    Scoring Table: Points assigned per letter matching the Scrabble scoring system.
+
+Additional Components
+Unique Features
+
+    Word Validation: Real-time checking of formed words against a dictionary.
+    Letter Frequency: Algorithm to ensure correct frequency of letter appearance based on their commonality in the English language.
+
+Implementation Considerations
+Development Challenges
+
+    Real-time Word Validation: Implementing an efficient algorithm to check for valid words as letters land.
+    Letter Frequency: Balancing the appearance of letters to maintain game difficulty and player engagement.
+    Smooth Controls: Ensuring smooth and responsive controls to allow precise placement of falling letters.
+
+Design Focus Areas
+
+    Gameplay Balance: Avoiding overwhelming the player with too many difficult-to-place letters while still challenging them.
+    User Experience: Maintaining a simple, clean interface that doesn’t distract from the core gameplay.
+    Music Integration: Making sure the background music enhances the ambiance without becoming monotonous.
+
+With these considerations, you have a comprehensive writeup that will guide the complete development process of your Letter Tetris game. This framework covers all necessary elements to create an engaging and balanced puzzle game that stays true to your vision.
+"""
+
 )
