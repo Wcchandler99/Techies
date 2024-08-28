@@ -76,10 +76,25 @@ class ReadFileTool(BaseTool):
     def _run(self, **kwargs) -> str:
         try:
             path = kwargs['path']
-            with open(f"{self.base_dir}/{path}", "r") as f:
-                content = f.read()
+            full_path = f"{self.base_dir}/{path}"
+            
+            # Initialize a variable to hold the content to be returned
+            content = []
+            max_lines = 500  # Limit to the first 500 lines
+            lines_read = 0  # Counter for the number of lines read
 
-            return content
+            with open(full_path, "r") as f:
+                # Read the file line by line up to the maximum number of lines
+                for i, line in enumerate(f):
+                    if lines_read >= max_lines:
+                        content.append(f"...Output truncated. Showing only the first {max_lines} lines.")
+                        break
+                    content.append(line.strip())
+                    lines_read += 1
+
+            # Join the content list into a single string
+            return "\n".join(content)
+
         except Exception as e:
             files_available = "\t".join(os.listdir(self.base_dir))
             return f"Failed to read file: {e}.\nFiles available: {files_available}"

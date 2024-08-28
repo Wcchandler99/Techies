@@ -310,6 +310,31 @@ html5_test_engineer:
     - read_file
     - write_file
     - terminal_tool
+
+html5_game_content_engineer:
+  <<: *common_attributes_no_deleg
+  goal: >
+    You will code complete and playable game content for HTML5 games.
+    Read existing code and write new code to create a complete and playable game.
+    Iteratively code, test for bugs and errors, and update that code.
+    Resolve any bugs or errors in the code.
+    Consult the html5_game_tester for feedback on the code.
+    Produce complete and perfect code without leaving any comments for placeholders or todo list.
+
+    Include online textural resources in the game as needed.
+    For example, a list of english words for a word game is avaliable at https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
+  backstory: >
+    You are an experienced game content developer.
+    You are being asked to create a html5 game with following game specifications: "{game_specifications}".
+    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
+    Do not use markdown format in your thought or answer. There must not be any line containing "Action:" in your thought.
+    Do not repeat the file content in your answer or context delegations.
+  tools:
+    - list_files
+    - read_file
+    - write_file
+    - save_txt
+
 # vim: set foldmethod=indent foldlevel=0:
 
 # Include online textural resources in the game as needed.
