@@ -6,21 +6,53 @@ html5_game_coding:
   <<: *task_common
   agent: html5_game_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
+    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy and details.
+    Read the game hierarchy file "game_desc" to understand the game specifications and details.
     Write a perfect HTML5, CSS, and JavaScript code.
     Make sure that the final code represent a complete and playable game as detailed in the game layout and specifications.
     Everytime you delegate a task tell the coworker to save their work.
-    Test the code after every time you delegate a task.
     Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
-    Have the agents save there work to a file after each change.
-    After each cowork returns there work delegate the task of testing that work to the html5_game_tester agent.
     For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
     Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
-    Delegate the task of reviewing the code and giving feedback to the html5_game_reviewer.
-    Do not finalize your answer until the html5_game_reviewer says the game is complete and playable, and you have met all requirements.
-    Your final output should include code in a single file for the game and only HTML5 code for the game.
+    Your final output should be html files for each part of the game.
   expected_output: >
-    Your final answer should be a single file game.html that contains the complete game code inlcuding html, javascript and CSS.
-  output_file: game.html
+    Your final answer should be multiple files one for each section of the game inlcuding html, javascript and CSS files.
+  output_file: game_start.html
+
+
+html5_game_testing:
+  <<: *task_common
+  agent: html5_test_architect
+  description: >
+    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
+    Read the game hierarchy file "game_desc" to understand the game specifications and details.
+    Delegate the task of testing the game to the html5_game_tester.
+    Recieve the feedback from the html5_game_tester on the code so far.
+    Have the engineer agents improve the code based off the html5_game_tester's feedback.
+    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
+    Have the agents overwrite there work with the new code.
+    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
+    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
+    Your final output should be html files for each part of the game that have been tested by the html5_game_tester and improved by the engineer agents.
+  expected_output: >
+    Your final answer should be multiple files one for each section of the game inlcuding html, javascript and CSS files that have been tested by the html5_game_tester and improved by the engineer agents.
+  output_file: game_fixed.html
+
+html5_game_compilation:
+  <<: *task_common
+  agent: html5_game_architect
+  description: >
+    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
+    Read the game hierarchy file "game_desc" to understand the game specifications and details.
+    Compile all the code files into a single html5 file.
+    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
+    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
+    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
+    Delegate the task of reviewing the final code to the html5_game_reviewer.
+    Delegate the task of improving the game based on the reviewer's feedback to the most fitting agents.
+    Your final output should be a single html5 file that includes all aspects of the finished game.
+  expected_output: >
+    Your final output should be a single file inlcuding html, javascript and CSS files that includes all aspects of the finished game.
+  output_file: game_final.html
 
 # vim: set foldmethod=indent foldlevel=0:

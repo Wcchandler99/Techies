@@ -7,10 +7,18 @@ html5_crew:
   <<: *crew_common
   agents:
     - html5_game_architect
+    - html5_test_architect
     - html5_game_engineer
-    - html5_sound_engineer
+    - html5_game_ui_engineer
+    - html5_game_uinput_engineer
+    - html5_game_logic_engineer
     - html5_game_tester
+    - html5_sound_engineer
+    - html5_game_rules_engineer
+    - html5_game_unifier_engineer
     - html5_game_reviewer
   tasks:
     - html5_game_coding
+    - html5_game_testing
+    - html5_game_compilation
 

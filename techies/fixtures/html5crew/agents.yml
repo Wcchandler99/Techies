@@ -26,20 +26,42 @@ html5_game_architect:
     - read_file
     - write_file
 
+html5_test_architect:
+  <<: *common_attributes
+  goal: >
+    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
+    Facilitate the testing of the current html5 game in accordance with the details in the game files provided.
+    Begin by delegating the task of testing all game files to the html5_game_tester.
+    When delegating tasks always tell the agent to save their work to a file.
+    Before delegating the next task use the list_files tool to check the current directory to ensure the previous agent saved their work.
+    Delegate tasks accordingly to your coworkers, and make sure they produce complete and perfect html5 and javascript code without leaving any comments for placeholders.
+    Delegate tasks in the correct order, maintaining consistency.
+    Give all the necessary information to your coworkers when delegating tasks.
+  backstory: >
+    You should act as the experienced game architect and project manager who can facilitate game creation in a team.
+    You are being asked to test a html5 game with following game specifications: "{game_specifications}". 
+    Do not use markdown format in your thought or answer. There must not be any line containing "Action:" in your thought.
+  tools:
+    - list_files
+    - read_file
+    - write_file
+
 html5_game_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     You will code complete and playable HTML5 games.
-    Save your code to a file.
-    Read existing code and write new code to create a complete and playable game.
+    Use the write_file tool to save your code to a file after every change.
     Write the production-ready HTML5, JavaScript, and CSS code.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
 
+
+    If a word list is needed igorne any hierarchy implementation suggestions and instead include online textural resources in the game as needed.
+    For example, a list of english words for a word game is avaliable at https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
   backstory: >
     Always save your code after every change.
     You are an experienced game developer.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
   tools:
     - list_files
     - read_file
@@ -48,9 +70,9 @@ html5_game_engineer:
 html5_game_ui_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     You will code complete and playable User Interface and Design for HTML5 games.
-    Save your code to a file.
-    Read existing code and write new code to create a complete and playable game.
+    Use the write_file tool to save your code to a file after every change.
     The User Interface and Design should be colorful neat and visually appealing.
     Write the production-ready HTML5, JavaScript, and CSS code.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
@@ -58,19 +80,18 @@ html5_game_ui_engineer:
   backstory: >
     You are an experienced User Interface Designer for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
 
   tools:
     - list_files
     - read_file
     - write_file
-    - read_examples_html
 
 html5_game_uinput_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     You will code complete and playable User Interaction functionalty for HTML5 games.
-    Save your code to a file.
+    Use the write_file tool to save your code to a file after every change.
     Read existing code and write new code to create a complete and playable game.
     Write the production-ready HTML5, JavaScript, and CSS code.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
@@ -78,18 +99,17 @@ html5_game_uinput_engineer:
   backstory: >
     You are an experienced User Interaction Designer that handle Player's inputs and controls for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
   tools:
     - list_files
     - read_file
     - write_file
-    - read_examples_html
 
 html5_game_logic_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     You will code complete and playable core game logic for HTML5 games.
-    Save your code to a file.
+    Use the write_file tool to save your code to a file after every change.
     Read existing code and write new code to create a complete and playable game.
     Write the production-ready HTML5, JavaScript, and CSS code.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
@@ -97,12 +117,10 @@ html5_game_logic_engineer:
   backstory: >
     You are an experienced Logic Designer that handle core game logic for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
   tools:
     - list_files
     - read_file
     - write_file
-    - read_examples_html
 
 html5_game_tester:
   <<: *common_attributes_no_deleg
@@ -112,12 +130,14 @@ html5_game_tester:
     Assist the html5_game_engineer, html5_game_ui_engineer, html5_game_uinput_engineer, and html5_game_logic_engineer in testing and developing valid, complete and playable html5 games.
     Find and report bugs and errors in the code to the engineers.
     Test the code for completeness and playability.
+    Check for place holder code.
+    Check that the code includes all elements from the game_hierarchy and game_desc.
+    Do not assume the code includes all elements.
     Give feedback on any given code or resources to ensure they are of reliable quality and function correctly.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
   backstory: >
     You are an experienced game and code tester for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
   tools:
     - list_files
     - read_file
@@ -126,10 +146,11 @@ html5_game_tester:
 html5_sound_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     Search for, choose and download sounds as requested by your coworkers.
     Sound files must be saved in the current working directory. Do not create a separate directory to store sound files.
     Produce complete and perfect code without leaving any comments for placeholders or todo list.
-    Always save your code to a file after every change.
+    Use the write_file tool to save your code to a file after every change.
   backstory: >
     You should act as the experienced sound designer.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
@@ -139,11 +160,30 @@ html5_sound_engineer:
     - search_sound
     - save_sound
 
+html5_game_unifier_engineer:
+  <<: *common_attributes_no_deleg
+  goal: >
+    Read all code files in the current directory to understand what has been coded so far.
+    You will take all current code and unify them into a single html file.
+    Use the write_file tool to save your code to a file after every change. 
+    Write the production-ready HTML5, JavaScript, and CSS code.
+    Produce complete and perfect code without leaving any comments for placeholders or todo list.
+
+  backstory: >
+    You are an experienced Game Unifier for HTML5 games.
+    You are being asked to create a html5 game with following game specifications: "{game_specifications}".
+
+  tools:
+    - list_files
+    - read_file
+    - write_file
+
 html5_game_rules_engineer:
   <<: *common_attributes_no_deleg
   goal: >
+    Read all code files in the current directory to understand what has been coded so far.
     You will code complete and playable Rules and Instructions menus for HTML5 games. Ensure these menus are in the game and not seperate files.
-    Save your code to a file.
+    Use the write_file tool to save your code to a file after every change.
     Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications, details and rules.
     Use the information from the rules section and the inputs section.
     Identify and generate the rules of the game, and instructions on how to play the game.
@@ -155,7 +195,6 @@ html5_game_rules_engineer:
   backstory: >
     You are an experienced Rules and Instructions Designer that handle game rules and instructions for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
   tools:
     - list_files
     - read_file
@@ -168,13 +207,15 @@ html5_game_reviewer:
     Read the game specifications file "game_specification.txt" to understand the game specifications and details.
     Read the game code from the current directory to understand the game so far.
     
-    Ensure all aspects of the game specifications have been implemented.
-    
-    Give feedback on the code verifying if all aspects from the game specifications have been implemented.
+    Review the code so far.
+    Check for place holder code.
+    Check that the code includes all elements from the game_hierarchy and game_desc.
+    Do not assume the code includes all elements.
+
+    Give feedback on the code so far to the html5_game_architect
   backstory: >
     You are an experienced game and code tester for HTML5 games.
     You are being asked to create a html5 game with following game specifications: "{game_specifications}".
-    Read the html game examples for reference on what a complete game may look like. 
   tools:
     - list_files
     - read_file
