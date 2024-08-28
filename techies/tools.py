@@ -64,6 +64,10 @@ class ReadHtmlExamplesToolSchema(BaseModel):
 class TerminalToolSchema(BaseModel):
     command: str = Field(type=str, description = "The terminal command to be run. ")
 
+class SaveTxtFromURLSchema(BaseModel):
+    url: str
+    file_name: str
+
 class ReadFileTool(BaseTool):
     name: str = "read_file"
     description: str = "Read the contents of a file from the bucket."
@@ -280,6 +284,29 @@ class TerminalTool(BaseTool):
         except subprocess.CalledProcessError as e:
             return f"Error executing command: {e} \nCommand returned non-zero exit status {e.returncode}. Output: {e.output}"
 
+class SaveTxtFromURL(BaseTool):
+    name: str = "save_txt"
+    description: str = "Download a file from a URL and save it with the specified file name."
+    args_schema: Type[BaseModel] = SaveTxtFromURLSchema
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def _run(self, **kwargs) -> str:
+        url = kwargs['url']
+        file_name = kwargs['file_name']
+
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Check for HTTP errors
+            with open(file_name, "wb") as file:
+                file.write(response.content)
+            return f"File downloaded as {file_name}"
+        except requests.RequestException as e:
+            return f"Failed to download file: {e}"
+        except Exception as e:
+            return f"An error occurred: {e}"
+        
 def get_all_tools():
     # base_dir = TemporaryDirectory(delete=False).name
     base_dir = "."
@@ -292,7 +319,7 @@ def get_all_tools():
     tools = {}
     toolklasses = [
         ReadFileTool, BatchReadFilesTool, WriteFileTool, ListFilesTool,
-        SaveSoundTool, SearchSoundTool, ReadHtmlExamplesTool, TerminalTool
+        SaveSoundTool, SearchSoundTool, ReadHtmlExamplesTool, TerminalTool, SaveTxtFromURL
     ]
     for toolkls in toolklasses:
         tool = toolkls(base_dir=base_dir)
