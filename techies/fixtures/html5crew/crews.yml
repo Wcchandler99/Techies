@@ -8,23 +8,23 @@ html5_crew:
   agents:
     - html5_game_architect
     - html5_game_test_architect
-    - html5_test_architect
     - html5_game_engineer
     - html5_game_ui_engineer
     - html5_game_uinput_engineer
-    - html5_game_logic_engineer
+    - html5_board_system_engineer
+    - html5_core_mechanics_engineer
+    - html5_score_progression_engineer
+    - html5_collision_boundary_logic_engineer
+    - html5_game_state_engineer
     - html5_game_tester
     - html5_sound_engineer
     - html5_game_rules_engineer
     - html5_game_unifier_engineer
     - html5_game_reviewer
     - html5_test_designer
-    - html5_test_setup_engineer
-    - html5_test_engineer
   tasks:
     - html5_game_coding
+    - html5_game_logic_coding
     - html5_game_testing
     - html5_game_compilation
-    - html5_test_coding
-    - html5_game_final
 
