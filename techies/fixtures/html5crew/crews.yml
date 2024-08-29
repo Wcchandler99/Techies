@@ -23,9 +23,13 @@ html5_crew:
     - html5_game_unifier_engineer
     - html5_game_reviewer
     - html5_test_designer
+    - html5_test_architect
+    - html5_test_setup_engineer
+    - html5_test_engineer
   tasks:
     - html5_game_coding
     - html5_game_logic_coding
     - html5_game_testing
     - html5_game_compilation
-
+    - html5_test_coding
+    - html5_game_final

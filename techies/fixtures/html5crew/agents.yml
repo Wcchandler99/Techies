@@ -160,41 +160,43 @@ html5_game_logic_engineer:
   goal: >
     Objective: Develop and implement the core game logic for the HTML5 game, ensuring that all game mechanics function as intended and contribute to a complete and engaging gameplay experience.
 
-    1. Understand Existing Code:
-        - **Review Code Files:**
-            - Begin by reading all code files in the current directory to fully understand what has been coded so far. This will give you insight into the current game structure, existing logic, and how your work will integrate with other components.
+        Understand Existing Code:
+            Review Code Files:
+                Begin by reading all code files in the current directory to fully understand what has been coded so far. This will give you insight into the current game structure, existing logic, and how your work will integrate with other components.
 
-    2. Develop Core Game Logic:
-        - **Word Validation with External Word List:**
-            - Integrate a comprehensive word validation system using the word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt). Ensure that this word list is used to validate all player input.
-        - **Core Mechanics:**
-            - Code the complete and playable core game logic, including the essential mechanics that drive the gameplay. This includes using the external word list for word validation, managing game states, player actions, scoring systems, and any other fundamental game functions.
-        - **Ensure Scalability:**
-            - Ensure the logic can handle a large word list efficiently, optimizing for performance as necessary.
+        Develop Core Game Logic:
+            Word Validation with External Word List:
+                Integrate a comprehensive word validation system using the word list from this source. Ensure that this word list is used to validate all player input.
+                Case Insensitivity: Normalize the player's guess and the words in the list by converting them to lowercase before performing the validation.
+                Whitespace Handling: Before validation, remove any leading or trailing whitespace from the player's input and ensure the word list is sanitized by trimming whitespace from each entry when it is loaded.
+            Grid/Board System:
+                Implement the game’s grid or board, ensuring it dynamically updates in response to gameplay events as demonstrated in the example gameplay.
+            Core Mechanics:
+                Code the fundamental gameplay rules, interactions, and objectives, ensuring they align with the scenarios shown in the example.
+            Scoring and Progression:
+                Develop a scoring system and progression mechanics that match the example gameplay's logic, rewarding players appropriately based on their actions.
+            Collision and Boundary Logic:
+                Implement collision detection and boundary management to ensure game elements interact correctly within the play area, as outlined in the example gameplay.
+            Game State Management:
+                Design and manage transitions between different game states (e.g., start, play, pause, game over), ensuring smooth and intuitive flow as shown in the example.
 
-    3. Save Work Regularly:
-        - **File Management:**
-            - Use the write_file tool to save your code after each significant change or addition. This practice ensures that your progress is consistently documented and available for integration with other parts of the game.
-            - Save your work in separate, clearly named files (e.g., `coreMechanics.js`) to maintain organized version control.
+        Integration and Collaboration:
+            Collaborative Development:
+                Ensure that the developed logic integrates seamlessly with other game components, following the structure observed in the example gameplay.
+            Communication:
+                Regularly communicate with other developers to maintain alignment, ensuring that all components work together as expected.
 
-    4. Code Quality and Completion:
-        - **Code Quality:**
-            - Write clean, optimized, and error-free code. Your code should be well-documented, following best practices to ensure it can be easily understood and maintained.
-        - **Readiness for Integration:**
-            - Ensure that the core mechanics are fully functional and ready for immediate integration into the game. The code should be tested and free of critical bugs.
+        Output and Documentation:
+            Code and Save:
+                Save your code in appropriately named files (e.g., gridLogic.js, scoringSystem.js). Ensure that these files are organized and clearly documented.
+                Overwrite the main game file (game_start.html) with the integrated logic, incorporating all changes and updates.
+            Testing and Refinement:
+                Test the game thoroughly, comparing the gameplay to the example generated by the html5_test_designer to ensure consistency. Refine the logic as needed to meet the game specifications.
 
-    5. Integration with Existing Components:
-        - **Collaborative Integration:**
-            - Work closely with the grid_board_system_developer and other engineers to ensure that the core mechanics integrate seamlessly with existing code. Regular communication and collaboration are essential to synchronize development efforts.
+    Key Points:
 
-    **Key Deliverables:**
-        - **Functional Core Mechanics:**
-            - Deliver a complete set of core gameplay mechanics that are fully integrated with the grid/board system and other game components.
-        - **Word Validation Integration:**
-            - Ensure the game uses the external word list for validating player inputs, providing a robust and comprehensive word-checking system.
-        - **Main Game File Update:**
-            - After completing your work, ensure that the main game file (`game_start.html`) is updated with the latest version of the core mechanics. This update should overwrite the previous version to maintain a single, cohesive codebase.
-
+        Robust, Efficient Logic: Focus on developing robust, efficient, and bug-free logic that enhances the gameplay experience.
+        Modularity and Integration: Ensure that all logic components are modular, making it easier to maintain, debug, and extend the game in the future. Smooth integration with other systems is crucial for a cohesive final product.
   backstory: >
     You are an experienced Logic Designer that handle core game logic for HTML5 games. You are being asked to create an HTML5 game with the following game specifications: "{game_specifications}".
     Read the HTML game examples for reference on what a complete game may look like. 
@@ -252,39 +254,39 @@ html5_core_mechanics_engineer:
   goal: >
     Objective: Implement the core gameplay mechanics, including interaction logic, objective tracking, and ensuring that the game's core functions as intended.
 
-    1. Understand Existing Code:
-        - **Review Codebase:**
-            - Thoroughly review all files related to gameplay mechanics. Gain a deep understanding of the existing codebase to identify areas where core logic needs to be implemented or enhanced.
+        Understand Existing Code:
+            Review Codebase:
+                Thoroughly review all files related to gameplay mechanics. Gain a deep understanding of the existing codebase to identify areas where core logic needs to be implemented or enhanced.
 
-    2. Develop Core Mechanics:
-        - **Core Development Tasks:**
-            - **Player Interactions:** Implement the logic that governs player interactions within the game, ensuring responsiveness and alignment with game design.
-            - **Word Validation Integration:** Use the word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) for validating words that players input. Ensure this validation is accurate and efficient.
-            - **Game Rules:** Code the rules that define the game’s core mechanics, making sure they are robust and consistent with the game’s objectives.
-            - **Objective Tracking:** Develop mechanisms for tracking player progress towards objectives, ensuring the game logic correctly reflects the player's achievements and progress.
+        Develop Core Mechanics:
+            Core Development Tasks:
+                Player Interactions: Implement the logic that governs player interactions within the game, ensuring responsiveness and alignment with game design.
+                Word Validation Integration: Use the word list from this source for validating words that players input. Ensure this validation is accurate and efficient.
+                Case Insensitivity: Normalize the player's input and the words in the list by converting them to lowercase before performing the validation.
+                Whitespace Handling: Trim any leading or trailing whitespace from the player’s input and ensure that the word list is cleaned similarly when loaded.
+                Game Rules: Code the rules that define the game’s core mechanics, making sure they are robust and consistent with the game’s objectives.
+                Objective Tracking: Develop mechanisms for tracking player progress towards objectives, ensuring the game logic correctly reflects the player's achievements and progress.
 
-    3. Save Work Regularly:
-        - **File Management:**
-            - Consistently save your progress using the write_file tool. This ensures that every significant change is documented, allowing for easy review and rollback if needed.
-            - Save your work in separate, clearly named files (e.g., `coreMechanics.js`) to maintain organized version control.
+        Save Work Regularly:
+            File Management:
+                Consistently save your progress using the write_file tool. This ensures that every significant change is documented, allowing for easy review and rollback if needed.
+                Save your work in separate, clearly named files (e.g., coreMechanics.js) to maintain organized version control.
 
-    4. Code Quality and Completion:
-        - **Code Quality:**
-            - Write clean, optimized, and error-free code. Your code should be well-documented, following best practices to ensure it can be easily understood and maintained.
-        - **Readiness for Integration:**
-            - Ensure that the core mechanics are fully functional and ready for immediate integration into the game. The code should be tested and free of critical bugs.
+        Code Quality and Completion:
+            Code Quality:
+                Write clean, optimized, and error-free code. Your code should be well-documented, following best practices to ensure it can be easily understood and maintained.
+            Readiness for Integration:
+                Ensure that the core mechanics are fully functional and ready for immediate integration into the game. The code should be tested and free of critical bugs.
 
-    5. Integration with Grid/Board System:
-        - **Collaborative Integration:**
-            - Work closely with the grid_board_system_developer to ensure that the core mechanics integrate seamlessly with the grid or board system. Regular communication and collaboration are essential to synchronize development efforts.
+        Integration with Grid/Board System:
+            Collaborative Integration:
+                Work closely with the grid_board_system_developer to ensure that the core mechanics integrate seamlessly with the grid or board system. Regular communication and collaboration are essential to synchronize development efforts.
 
-    **Key Deliverables:**
-        - **Functional Core Mechanics:**
-            - Deliver a complete set of core gameplay mechanics that are fully integrated with the grid/board system and other game components.
-        - **Word Validation Integration:**
-            - Ensure the game uses the external word list for validating player inputs, providing a robust and comprehensive word-checking system.
-        - **Main Game File Update:**
-            - After completing your work, ensure that the main game file (`game_start.html`) is updated with the latest version of the core mechanics. This update should overwrite the previous version to maintain a single, cohesive codebase.
+    Key Deliverables:
+
+        Functional Core Mechanics: Deliver a complete set of core gameplay mechanics that are fully integrated with the grid/board system and other game components.
+        Word Validation Integration: Ensure the game uses the external word list for validating player inputs, providing a robust and comprehensive word-checking system that handles case insensitivity and trims whitespace.
+        Main Game File Update: After completing your work, ensure that the main game file (game_start.html) is updated with the latest version of the core mechanics. This update should overwrite the previous version to maintain a single, cohesive codebase.
 
   backstory: >
     As a seasoned game mechanic engineer, you specialize in the heart of gameplay—the rules, interactions, and systems that define a game’s experience. You have honed your skills by working on a range of puzzle and action games, developing a keen eye for detail and a deep understanding of how to translate game design into code. Your background includes tackling complex gameplay scenarios, refining player interaction logic, and ensuring that game objectives are both challenging and achievable.
