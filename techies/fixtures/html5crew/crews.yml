@@ -7,7 +7,6 @@ html5_crew:
   <<: *crew_common
   agents:
     - html5_game_architect
-    - html5_game_test_architect
     - html5_game_engineer
     - html5_game_logic_engineer
     - html5_game_ui_engineer

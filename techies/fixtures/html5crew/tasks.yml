@@ -41,7 +41,7 @@ html5_game_coding:
         - Ensure the game is optimized for performance and compatible across browsers.
   expected_output: >
     A set of HTML5, CSS, and JavaScript files representing a fully functional game.
-  output_file: game.html
+  output_file: first_task_output.html
 
 html5_game_logic_coding:
   <<: *task_common
@@ -49,7 +49,7 @@ html5_game_logic_coding:
   description: >
     Objective:
     Develop, implement, and integrate the core game logic to ensure seamless gameplay within the HTML5 game framework.
-    
+
     1. Initial Setup: Generate Example Gameplay
 
         Engage HTML5 Test Designer:
@@ -66,7 +66,7 @@ html5_game_logic_coding:
             game_hierarchy.xml: Analyze this file to understand the game's structure and how different components are interconnected.
             game_desc.md: Review this document to grasp the detailed mechanics, rules, and objectives that the game logic must support.
         **Word List Integration:**
-            All word validation logic must use the comprehensive word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) to ensure accurate and efficient validation of player inputs.
+            All word validation logic must use the comprehensive word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) and ensure that validation is case-insensitive by normalizing both user input and the word list entries to uppercase.
 
     3. Develop Core Game Logic
 
@@ -83,7 +83,7 @@ html5_game_logic_coding:
             Implement collision detection and boundary management to ensure game elements interact correctly within the play area, as outlined in the example gameplay.
 
         **Word Validation Logic:**
-            Integrate the external word list for validating all player inputs, ensuring comprehensive word validation.
+            Integrate the external word list for validating all player inputs, ensuring comprehensive and case-insensitive word validation. The validation should prevent the acceptance of any combination of letters that does not form a valid English word.
 
         Game State Management:
             Design and manage transitions between different game states (e.g., start, play, pause, game over), ensuring smooth and intuitive flow as shown in the example.
@@ -110,12 +110,12 @@ html5_game_logic_coding:
 
   expected_output: >
     Fully functional, production-ready JavaScript files integrated within the HTML5 framework.
-  output_file: game.html
+  output_file: second_task_output.html
 
 
 html5_game_testing:
   <<: *task_common
-  agent: html5_game_test_architect
+  agent: html5_game_architect
   description: >
     Objective: Test, review, and enhance the game files to ensure they are complete, functional, and adhere to the game specifications.
     1. Understanding Game Specifications:
@@ -130,7 +130,8 @@ html5_game_testing:
         Receive Feedback:
             Gather detailed feedback on bugs, issues, and areas needing improvement.
         **Word Validation Testing:**
-            Ensure that the word validation logic correctly utilizes the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) and that all player inputs are validated accurately.
+            Ensure that the word validation logic correctly utilizes the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) and that all player inputs are validated accurately. Verify that the validation process is case-insensitive by testing words in different cases (e.g., "Route", "route").
+            Test the game's behavior when invalid words are entered, ensuring appropriate error messages are displayed, and the game does not accept non-English words.
 
     3. Improving the Game Code:
 
@@ -154,7 +155,8 @@ html5_game_testing:
         - Documentation should explain changes or enhancements.
   expected_output: >
     A fully tested, reviewed, and improved version of the game.
-  output_file: test_results.txt
+  output_file: test_task_output.txt
+
 
 html5_game_compilation:
   <<: *task_common
@@ -169,7 +171,7 @@ html5_game_compilation:
     2. Compiling the Game:
 
         Integrate All Code Files:
-            Combine all HTML, CSS, and JavaScript files into a single HTML5 file, ensuring all logic, especially word validation using the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt), is correctly integrated.
+            Combine all HTML, CSS, and JavaScript files into a single HTML5 file, ensuring all logic, especially word validation using the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt), is correctly integrated. Verify that word validation is case-insensitive and that invalid words are appropriately handled.
 
         Ensure Complete Functionality:
             The compiled file should represent a complete and playable game.
@@ -198,7 +200,8 @@ html5_game_compilation:
         - The final game should undergo rigorous testing and review.
   expected_output: >
     A single HTML5 file that includes all the game components, fully integrated and functional.
-  output_file: game.html
+  output_file: final_task_output.html
+
 
 html5_test_coding:
   <<: *task_common

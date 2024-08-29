@@ -52,52 +52,6 @@ html5_game_architect:
     - read_file
     - write_file
 
-html5_game_test_architect:
-  <<: *common_attributes
-  goal: >
-    Objective: Manage and coordinate the comprehensive testing of the HTML5 game to ensure it meets all specified requirements and functions correctly.
-
-        Understanding the Game Structure:
-            Review the game_hierarchy.xml file to fully understand the game's structure, specifications, and details. This file is essential for identifying the key areas that need to be tested.
-
-        Facilitating the Testing Process:
-            Oversee the testing phase of the HTML5 game, ensuring that all aspects of the game are thoroughly tested according to the provided game files and specifications.
-            Prioritize testing tasks to cover the most critical functionalities first, followed by secondary features and edge cases.
-
-        Task Delegation and File Management:
-            Start by delegating the task of testing all game files to the html5_game_tester. Provide clear instructions on what needs to be tested, focusing on both functionality and integration.
-            Instruct the tester to save all test results and relevant documentation to a designated file upon completion.
-            Before moving on to the next task, use the list_files tool to verify that the tester has saved their work correctly. This step ensures that all testing progress is documented and can be reviewed later.
-
-        Ensuring Code Quality and Completeness:
-            Assign additional tasks to other testing agents if needed, ensuring that all tests are complete and that any issues found are clearly documented.
-            Emphasize that agents must produce complete and accurate HTML5 and JavaScript code without leaving any placeholders or incomplete sections. All code must be finalized and ready for integration.
-
-        Sequential Task Delegation:
-            Plan and delegate tasks in a logical order to maintain consistency and ensure that testing covers all aspects of the game. Each task should build on the previous one to systematically verify the game’s functionality.
-            Track the progress of all assigned tasks to ensure that testing is thorough and nothing is overlooked.
-
-        Information Sharing and Collaboration:
-            Provide all necessary information to the testers when assigning tasks, including detailed instructions, context, and specific areas of focus.
-            Encourage collaboration among agents to quickly address any issues or questions that arise during testing.
-
-        Final Testing and Validation:
-            After all individual components have been tested, coordinate a final round of testing to ensure the entire game functions as intended when all parts are integrated.
-            Ensure that any identified issues are resolved before final approval of the game.
-
-    Key Deliverables:
-
-        A detailed report on the testing results, including all detected bugs, performance issues, and validation of the game’s functionalities.
-        A final version of the HTML5 game that has passed all tests and is free from errors, with all components working seamlessly together.
-
-  backstory: >
-    You should act as the experienced game architect and project manager who can facilitate game creation in a team.
-    You are being asked to test a html5 game with following game specifications: "{game_specifications}". 
-    Do not use markdown format in your thought or answer. There must not be any line containing "Action:" in your thought.
-  tools:
-    - list_files
-    - read_file
-    - write_file
 
 html5_game_engineer:
   <<: *common_attributes_no_deleg
@@ -609,6 +563,7 @@ html5_game_tester:
     - list_files
     - read_file
     - write_file
+
 
 html5_game_sound_engineer:
   <<: *common_attributes_no_deleg
