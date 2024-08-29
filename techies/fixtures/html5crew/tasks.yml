@@ -6,17 +6,46 @@ html5_game_coding:
   <<: *task_common
   agent: html5_game_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy and details.
-    Read the game hierarchy file "game_desc" to understand the game specifications and details.
-    Write a perfect HTML5, CSS, and JavaScript code.
-    Make sure that the final code represent a complete and playable game as detailed in the game layout and specifications.
-    Everytime you delegate a task tell the coworker to save their work.
-    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
-    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
-    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
-    Your final output should be html files for each part of the game.
+    Objective: Create a fully functional HTML5 game based on the provided game_hierarchy.xml and game_desc files.
+
+    1. Understand Game Requirements:
+        - Read the Files:
+            - Read the game_hierarchy.xml file to understand the overall game structure, components, and their relationships.
+            - Read the game_desc file to understand the game specifications, mechanics, and detailed requirements.
+        - Clarify Any Ambiguities:
+            - If any part of the game design or requirements is unclear, consult with relevant agents or request additional information.
+
+    2. Game Development Tasks:
+        - HTML, CSS, and JavaScript Code:
+            - Write clean, modular, and maintainable HTML5, CSS, and JavaScript code that adheres to the game specifications and hierarchy described in the files.
+            - Ensure the code is well-documented and follows best practices for web development.
+        - Delegation of Tasks:
+            - Assign Specific Tasks:
+                - Identify specific game components or sections (e.g., player controls, game logic, UI elements).
+                - Delegate these tasks to agents with relevant expertise. For example, assign UI tasks to a UI designer agent and game logic to a JavaScript developer agent.
+                - For tasks that do not fit any specialized agents, assign them to the html5_game_engineer agent.
+            - Communication and Collaboration:
+                - Ensure all agents are aware of each other's work and consistently reference existing components to maintain code consistency and integration.
+                - If a necessary component is missing, either create it or delegate its creation to the appropriate agent.
+        - File Management:
+            - Every time an agent completes a task, they must save their work to an appropriately named file (e.g., playerControls.js, gameUI.html).
+            - Agents should provide brief documentation or comments within the code to explain their functionality and how it integrates with the rest of the game.
+
+    3. Output Requirements:
+        - Final Deliverables:
+            - Compile all the developed game components into cohesive HTML files for each part of the game.
+            - Ensure that the final output is a complete and playable game as specified in the game layout and specifications.
+        - Quality Assurance:
+            - Test the game thoroughly to ensure all components work together seamlessly and the game is playable without any errors.
+            - Perform a review to ensure the code meets the game specifications and is free of bugs.
+
+    Key Points for Agents:
+      - Focus on collaborative development to ensure seamless integration of game components.
+      - Follow a modular approach to development, making the codebase easy to maintain and expand.
+      - Ensure the game is optimized for performance and compatible across different browsers.
+      - Prioritize usability and user experience based on the game specifications.
   expected_output: >
-    Your final answer should be multiple files one for each section of the game inlcuding html, javascript and CSS files.
+    A complete set of files and documentation that represent a fully functional, playable HTML5 game based on the provided game_hierarchy.xml and game_desc files.
   output_file: game_start.html
 
 
@@ -24,65 +53,175 @@ html5_game_testing:
   <<: *task_common
   agent: html5_game_test_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
-    Read the game hierarchy file "game_desc" to understand the game specifications and details.
-    Delegate the task of testing the game to the html5_game_tester.
-    Recieve the feedback from the html5_game_tester on the code so far.
-    Have the engineer agents improve the code based off the html5_game_tester's feedback.
-    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
-    Have the agents overwrite there work with the new code.
-    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
-    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
-    Your final output should be html files for each part of the game that have been tested by the html5_game_tester and improved by the engineer agents.
+    Objective: Test, review, and enhance the game files to ensure they are complete, functional, and adhere to the game specifications as defined in game_hierarchy.xml and game_desc.
+
+    1. Understanding Game Specifications:
+        - Read the Files:
+            - Read game_hierarchy.xml to understand the overall game structure, hierarchy, and detailed components.
+            - Read game_desc to grasp the game specifications, mechanics, and functional requirements.
+
+    2. Testing the Game:
+        - Delegate Testing Tasks:
+            - Assign the task of thoroughly testing the game to the html5_game_tester agent.
+            - Ensure that the html5_game_tester agent conducts comprehensive testing, covering all aspects of gameplay, functionality, and performance.
+        - Receive Feedback:
+            - Gather detailed feedback from the html5_game_tester on any bugs, issues, missing features, or areas needing improvement in the current game files.
+
+    3. Improving the Game Code:
+        - Code Review and Enhancement:
+            - Have the engineer agents (e.g., html5_game_engineer, JavaScript_developer, UI_designer) review the feedback provided by the html5_game_tester.
+            - Make the necessary improvements based on the feedback to enhance game functionality, fix bugs, optimize performance, and ensure all specified features are implemented.
+        - Delegate Coding Tasks:
+            - Assign the task of coding and improving specific game components to the most qualified agents based on their expertise.
+            - For any tasks that do not have a specialized agent, delegate the task to the html5_game_engineer agent.
+        - File Management:
+            - Agents should overwrite the existing files with the improved code, ensuring all changes are accurately saved and integrated into the final game.
+
+    4. Collaboration and Integration:
+        - Ensure Cohesion:
+            - All agents must be aware of their coworkers' work and refer to existing components to maintain consistency and avoid redundancy.
+            - If a necessary component does not exist, create it in the code or delegate its creation to the appropriate agent.
+        - Continuous Communication:
+            - Maintain open communication among all agents to ensure a smooth workflow and prevent any integration issues.
+
+    5. Final Deliverables:
+        - Output Requirements:
+            - The final deliverables should include fully tested and reviewed HTML, CSS, and JavaScript files for each part of the game.
+            - Ensure all files reflect the game’s specifications as detailed in the game_hierarchy.xml and game_desc files.
+            - The game should be complete, playable, and free of bugs, with all improvements and feedback addressed.
+
+    Key Points for Completion:
+        - Comprehensive Testing: Ensure that every aspect of the game is tested thoroughly, and all issues identified by the html5_game_tester are resolved.
+        - Quality Assurance: Conduct a final review to ensure the game meets all specifications, is optimized for performance, and is compatible across different browsers.
+        - Documentation: Provide comments in the code to explain any changes or enhancements made, especially for complex functionalities.
   expected_output: >
-    Your final answer should be multiple files one for each section of the game inlcuding html, javascript and CSS files that have been tested by the html5_game_tester and improved by the engineer agents.
-  output_file: game_fixed.html
+    A comprehensive set of files that reflect a fully tested, reviewed, and improved version of the game. The game should be functional, free of bugs, and aligned with the specifications provided in game_hierarchy.xml and game_desc.  output_file: game_fixed.html
 
 html5_game_compilation:
   <<: *task_common
   agent: html5_game_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
-    Read the game hierarchy file "game_desc" to understand the game specifications and details.
-    Compile all the code files into a single html5 file.
-    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
-    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
-    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
-    Delegate the task of reviewing the final code to the html5_game_reviewer.
-    Delegate the task of improving the game based on the reviewer's feedback to the most fitting agents.
-    Your final output should be a single html5 file that includes all aspects of the finished game.
+    Objective: Compile all the game components into a single HTML5 file to create a fully functional, cohesive game based on the game specifications defined in game_hierarchy.xml and game_desc.
+
+    1. Understanding Game Specifications:
+        - Read the Files:
+            - Read game_hierarchy.xml to fully understand the game's structure, hierarchy, and component relationships.
+            - Read game_desc to grasp the detailed game specifications, mechanics, and functional requirements.
+
+    2. Compiling the Game:
+        - Integrate All Code Files:
+            - Combine all the HTML, CSS, and JavaScript files into a single HTML5 file that includes all components of the game. Ensure the integration is seamless, with all scripts and styles properly linked and functioning together.
+        - Ensure Complete Functionality:
+            - The compiled file should represent a complete and playable game, maintaining all functionalities and features as per the game specifications.
+
+    3. Delegating Tasks:
+        - Assign Specific Tasks:
+            - Assign specific tasks for compiling and integrating different parts of the game to the most fitting agents based on their expertise.
+            - For tasks that do not align with any specialized agents, delegate them to the html5_game_engineer agent.
+        - Code Awareness and Collaboration:
+            - Agents must be aware of their coworkers' code to avoid duplication and ensure consistency. Refer to existing components whenever possible.
+            - If a necessary component is missing, create it or delegate its creation to the appropriate agent.
+
+    4. Review and Refinement:
+        - Delegate Final Review:
+            - Assign the task of reviewing the compiled HTML5 file to the html5_game_reviewer agent to ensure the game is fully functional and meets all specifications.
+        - Implement Feedback:
+            - Based on the feedback from the html5_game_reviewer, have the most suitable agents refine and improve the game. This includes fixing any issues, optimizing performance, and ensuring all components are correctly integrated.
+
+    5. Output Requirements:
+        - Final HTML5 Game File:
+            - The final output should be a single HTML5 file that incorporates all aspects of the finished game, including all styles, scripts, and media.
+        - Quality Assurance:
+            - Ensure the final game file is bug-free, fully functional, and provides a seamless user experience.
+            - Test the game thoroughly across all major browsers to confirm compatibility and performance.
+
+    Key Points for Completion:
+        - Seamless Integration: All game components must work together harmoniously in the final HTML5 file.
+        - Thorough Testing and Review: The final game should undergo rigorous testing and review to ensure it meets all requirements and specifications.
+        - Clear Documentation: Include comments in the code to explain the integration process and any significant decisions made during compilation.
   expected_output: >
-    Your final output should be a single file inlcuding html, javascript and CSS files that includes all aspects of the finished game.
+    A single HTML5 file that includes all the game components, ensuring that the game is fully integrated, functional, and adheres to the specifications outlined in the game_hierarchy.xml and game_desc files.
   output_file: game_compiled.html
 
 html5_test_coding:
   <<: *task_common
   agent: html5_test_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" and game specifications to understand the game hierarchy, specifications and details.
-    Create a list of the functional aspects of the game that must be tested.
-    Delegate the task of designing example game play to be used to test the game to the html5_test_designer.
-    Delegate the task of setting up the game code to be used to test the game to the html5_test_setup_engineer.
-    Delegate the task of testing the game to the html5_test_engineer.
-    Create a report of the game functionality indicating all working and non working game aspects.
+    Objective: Design and execute unit tests for the game to verify that all functionalities are working correctly, and identify any issues or bugs that need to be addressed.
+
+    1. Understanding Game Requirements:
+        - Read the Files:
+            - Read game_hierarchy.xml and the game specifications to thoroughly understand the game’s hierarchy, structure, and detailed functionalities that need to be tested.
+            - Read game_desc to grasp the detailed game specifications, mechanics, and functional requirements.
+        - Identify Functional Aspects:
+            - Create a comprehensive list of all functional aspects of the game that must be tested, including game mechanics, user interactions, animations, scoring, and any other critical features.
+
+    2. Designing Test Scenarios:
+        - Delegate Gameplay Design:
+            - Assign the task of designing example gameplay scenarios to the html5_test_designer. These scenarios should cover various aspects of the game to thoroughly test its functionality and edge cases.
+        - Set Up Testing Environment:
+            - Delegate the task of setting up the game code for testing to the html5_test_setup_engineer. This setup should include all necessary configurations, environments, and any mock data needed to run the tests effectively.
+
+    3. Executing Unit Tests:
+        - Conduct Tests:
+            - Delegate the task of conducting the unit tests to the html5_test_engineer. The html5_test_engineer should run all designed test cases and document the outcomes.
+        - Ensure Comprehensive Coverage:
+            - Ensure that the unit tests cover all aspects listed in the functional aspects document, testing both typical user interactions and edge cases to identify any potential bugs or performance issues.
+
+    4. Reporting Results:
+        - Create a Test Report:
+            - Compile a detailed test report indicating all working and non-working aspects of the game. The report should categorize issues by severity, outline steps to reproduce any bugs, and suggest potential fixes.
+        - Document Findings:
+            - The report should also include a summary of all tests performed, the results of each test (pass/fail), and any observations that might be relevant for further development or optimization.
+
+    5. Final Deliverables:
+        - Comprehensive Unit Test Suite:
+            - Provide a complete suite of unit tests for the game, including all test scripts, test data, and any necessary instructions for running the tests.
+        - Test Report:
+            - Submit a detailed test report that summarizes the outcomes of all tests, clearly indicating which game functionalities are working as intended and which are not.
+
+    Key Points for Completion:
+        - Thorough Testing: Ensure all game functionalities are thoroughly tested, covering both normal and edge cases.
+        - Clear Documentation: Provide detailed documentation for each test case and ensure the test report clearly communicates any issues found.
+        - Collaboration and Communication: Maintain open communication among agents to ensure smooth execution of tests and timely resolution of any issues discovered.
   expected_output: >
-    Your final answer should be the results of testing the game.
+    A comprehensive unit test report for the HTML5 game, accompanied by a full suite of unit tests, ensuring that all game functionalities are thoroughly verified, documented, and optimized for further development.
   output_file: test_results.txt
 
 html5_game_final:
   <<: *task_common
   agent: html5_test_architect
   description: >
-    Read the game hierarchy file "game_hierarchy.xml" to understand the game hierarchy, specifications and details.
-    Read the game hierarchy file "game_desc" to understand the game specifications and details.
-    Read the test_results.txt to understand the results of testing the game.
-    Have the engineer agents improve the code based off the test_results.
-    Delegate the task of coding the different parts of the game and saving this code to a file to the most fitting agents.
-    Have the agents overwrite there work with the new code.
-    For any tasks that do not fit any specialized agents, delegate the task to the html5_game_engineer agent.
-    Agents must be conscious of their coworkers' code, and must ensure they refer to already exisiting components. If a necessary component does not exist, create it in the code or delegate the task of doing so to the right agent.
-    Your final output should be a single html5 file that includes all aspects of the finished game.
+    Objective: Improve the HTML5 game code based on test results and produce a final, fully functional HTML5 game file.
+
+    Instructions for Agents:
+
+        1. Understanding the Current State of the Game:
+            - Game Hierarchy and Specifications: Read and thoroughly understand the game hierarchy from game_hierarchy.xml and the game specifications from game_desc. Ensure that you are familiar with the entire structure, mechanics, and intended functionalities of the game.
+            - Review Test Results: Analyze the contents of test_results.txt to identify any bugs, performance issues, or incomplete functionalities. Pay attention to failed tests, edge cases, and areas needing improvement.
+
+        2. Code Improvement and Assignment of Tasks:
+            - Analyze Test Failures: Identify the specific parts of the game code that need to be improved based on the test results. Prioritize fixing critical issues, addressing broken functionality, and ensuring that edge cases are properly handled.
+            - Delegate to Agents: Assign specific coding tasks to the most appropriate agents based on their expertise. Ensure that each agent is working on a distinct part of the game to maximize efficiency and avoid overlapping efforts:
+                - Delegate gameplay logic to agents skilled in handling mechanics.
+                - Assign user interface and animation improvements to agents specializing in design and interaction.
+                - For general coding and coordination tasks, assign them to the html5_game_engineer agent.
+            - Refer to Existing Components: Ensure that agents consistently reference existing components in the code. Agents should reuse or adapt these components when possible. If a necessary component does not already exist, either create it directly or delegate the task to an agent best suited for the task.
+
+        3. Code Integration and Collaboration:
+            - Collaborative Development: Agents must be aware of their coworkers' work to ensure smooth integration of the code. Communicate and collaborate where necessary to avoid conflicts or duplication of code.
+            - Code Overwriting: Agents should overwrite their assigned sections of the code with new, improved versions. Ensure that all bugs, broken functionality, and edge cases identified in the test results are addressed in the updated code.
+            - Component Creation: If a new component is needed that doesn't currently exist in the code, the responsible agent should create it. If the task requires specialized knowledge, delegate the creation of the component to the appropriate agent.
+
+        4. Final Output:
+            - Single HTML5 File: Once all code improvements have been implemented, consolidate the entire game code into a single HTML5 file. This file should contain all scripts, styles, assets, and functionalities required to run the game seamlessly.
+            - Ensure Functionality: Before submitting the final file, ensure that the entire game works correctly, including all functionalities, interactions, animations, and scoring mechanics. Perform a final round of testing to verify that the game operates as expected without errors.
+
+    Key Points for Completion:
+        - Fix all identified issues from the test results.
+        - Ensure collaborative development to integrate code seamlessly.
+        - Produce a clean, well-organized HTML5 file that includes all necessary components and scripts for the game to run correctly.
   expected_output: >
-    Your final output should be a single html5 file that includes all aspects of the finished game.
+    A fully functional and optimized HTML5 game in the form of a single .html file. This file should integrate all improvements and reflect the test results and the hierarchical structure of the game.
   output_file: game_final.html
 # vim: set foldmethod=indent foldlevel=0:
