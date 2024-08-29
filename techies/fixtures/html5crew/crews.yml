@@ -9,6 +9,7 @@ html5_crew:
     - html5_game_architect
     - html5_game_test_architect
     - html5_game_engineer
+    - html5_game_logic_engineer
     - html5_game_ui_engineer
     - html5_game_uinput_engineer
     - html5_board_system_engineer

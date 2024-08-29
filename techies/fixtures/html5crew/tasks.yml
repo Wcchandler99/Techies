@@ -7,41 +7,38 @@ html5_game_coding:
   agent: html5_game_architect
   description: >
     Objective: Create a fully functional HTML5 game based on the provided game_hierarchy.xml and game_desc.md files.
-    1. Understand Game Requirements:
 
-        Read the Files:
-            Analyze the game_hierarchy.xml to understand the game's structure, components, and their relationships.
-            Review the game_desc.md to understand the game specifications, mechanics, and detailed requirements.
-        Clarify Ambiguities:
-            If any part of the game design or requirements is unclear, consult with relevant agents or request additional information.
+    1. Understand Game Requirements:
+        - **Review Key Documents:**
+            - Thoroughly analyze the `game_hierarchy.xml` and `game_desc.md` files to understand the game's structure, components, and detailed requirements.
+        - **Clarify Ambiguities:**
+            - If any part of the game design or requirements is unclear, consult with relevant agents or request additional information.
 
     2. Game Development Tasks:
+        - **HTML, CSS, and JavaScript Code:**
+            - Write clean, modular, and maintainable HTML5, CSS, and JavaScript code that adheres to the game specifications.
+            - Ensure the code is well-documented and follows web development best practices.
+        - **Delegation of Tasks:**
+            - **Assign Specific Tasks:**
+                - Identify and delegate specific components or sections to agents with relevant expertise (e.g., UI design to a UI designer, sound integration to the `html5_game_sound_engineer`).
+            - **Communication and Collaboration:**
+                - Maintain consistent communication among agents to ensure seamless integration and address any dependencies or issues that arise.
 
-        HTML, CSS, and JavaScript Code:
-            Write clean, modular, and maintainable HTML5, CSS, and JavaScript code that adheres to the game specifications.
-            Ensure the code is well-documented and follows web development best practices.
-        Delegation of Tasks:
-            Assign Specific Tasks:
-                Identify and delegate specific components or sections to agents with relevant expertise (e.g., UI design to a UI designer).
-            Communication and Collaboration:
-                Maintain consistent communication among agents to ensure seamless integration.
-        File Management:
-            Agents should save their work in appropriately named files (e.g., playerControls.js, gameUI.html).
-            Overwrite the main game file (game_start.html) with the latest version of the game, incorporating all completed tasks.
+        - **File Management:**
+            - Agents should save their work in appropriately named files (e.g., `playerControls.js`, `gameUI.html`).
+            - Overwrite the main game file (`game_start.html`) with the latest version of the game, incorporating all completed tasks.
 
     3. Output Requirements:
+        - **Final Deliverables:**
+            - Compile all developed components into a cohesive HTML5 game.
+            - Ensure the final output is a complete, playable game as specified.
+        - **Quality Assurance:**
+            - Thoroughly test the game to ensure all components work together seamlessly.
+            - Overwrite `game_start.html` with the finalized version, saving all changes.
 
-        Final Deliverables:
-            Compile all developed components into a cohesive HTML5 game.
-            Ensure the final output is a complete, playable game as specified.
-        Quality Assurance:
-            Thoroughly test the game to ensure all components work together seamlessly.
-            Overwrite game_start.html with the finalized version, saving all changes.
-
-    Key Points:
-
-        Prioritize collaboration, modular development, and seamless integration.
-        Ensure the game is optimized for performance and compatible across browsers.
+    **Key Points:**
+        - Prioritize collaboration, modular development, and seamless integration.
+        - Ensure the game is optimized for performance and compatible across browsers.
   expected_output: >
     A set of HTML5, CSS, and JavaScript files representing a fully functional game.
   output_file: game.html
@@ -68,6 +65,8 @@ html5_game_logic_coding:
         Review Key Documents:
             game_hierarchy.xml: Analyze this file to understand the game's structure and how different components are interconnected.
             game_desc.md: Review this document to grasp the detailed mechanics, rules, and objectives that the game logic must support.
+        **Word List Integration:**
+            All word validation logic must use the comprehensive word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) to ensure accurate and efficient validation of player inputs.
 
     3. Develop Core Game Logic
 
@@ -82,6 +81,9 @@ html5_game_logic_coding:
 
         Collision and Boundary Logic:
             Implement collision detection and boundary management to ensure game elements interact correctly within the play area, as outlined in the example gameplay.
+
+        **Word Validation Logic:**
+            Integrate the external word list for validating all player inputs, ensuring comprehensive word validation.
 
         Game State Management:
             Design and manage transitions between different game states (e.g., start, play, pause, game over), ensuring smooth and intuitive flow as shown in the example.
@@ -102,15 +104,14 @@ html5_game_logic_coding:
         Testing and Refinement:
             Test the game thoroughly, comparing the gameplay to the example generated by the html5_test_designer to ensure consistency. Refine the logic as needed to meet the game specifications.
 
-    Key Points:
-
-        Robust, Efficient Logic: Focus on developing robust, efficient, and bug-free logic that enhances the gameplay experience.
-
-        Modularity and Integration: Ensure that all logic components are modular, making it easier to maintain, debug, and extend the game in the future. Smooth integration with other systems is crucial for a cohesive final product.
+    **Key Points:**
+        - Robust, Efficient Logic: Focus on developing robust, efficient, and bug-free logic that enhances the gameplay experience.
+        - Modularity and Integration: Ensure that all logic components are modular, making it easier to maintain, debug, and extend the game in the future. Smooth integration with other systems is crucial for a cohesive final product.
 
   expected_output: >
     Fully functional, production-ready JavaScript files integrated within the HTML5 framework.
   output_file: game.html
+
 
 html5_game_testing:
   <<: *task_common
@@ -128,6 +129,8 @@ html5_game_testing:
             Assign comprehensive testing tasks to the html5_game_tester.
         Receive Feedback:
             Gather detailed feedback on bugs, issues, and areas needing improvement.
+        **Word Validation Testing:**
+            Ensure that the word validation logic correctly utilizes the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt) and that all player inputs are validated accurately.
 
     3. Improving the Game Code:
 
@@ -146,10 +149,9 @@ html5_game_testing:
             The final deliverables should include fully tested and reviewed HTML, CSS, and JavaScript files.
             Ensure all files reflect the game’s specifications.
 
-    Key Points:
-
-        Comprehensive testing and quality assurance are critical.
-        Documentation should explain changes or enhancements.
+    **Key Points:**
+        - Comprehensive testing and quality assurance are critical.
+        - Documentation should explain changes or enhancements.
   expected_output: >
     A fully tested, reviewed, and improved version of the game.
   output_file: test_results.txt
@@ -167,7 +169,8 @@ html5_game_compilation:
     2. Compiling the Game:
 
         Integrate All Code Files:
-            Combine all HTML, CSS, and JavaScript files into a single HTML5 file.
+            Combine all HTML, CSS, and JavaScript files into a single HTML5 file, ensuring all logic, especially word validation using the external word list from [this source](https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt), is correctly integrated.
+
         Ensure Complete Functionality:
             The compiled file should represent a complete and playable game.
 
@@ -190,10 +193,9 @@ html5_game_compilation:
         Quality Assurance:
             Ensure the game is bug-free, fully functional, and provides a seamless user experience.
 
-    Key Points:
-
-        Ensure all components work harmoniously.
-        The final game should undergo rigorous testing and review.
+    **Key Points:**
+        - Ensure all components work harmoniously.
+        - The final game should undergo rigorous testing and review.
   expected_output: >
     A single HTML5 file that includes all the game components, fully integrated and functional.
   output_file: game.html
