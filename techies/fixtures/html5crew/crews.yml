@@ -17,7 +17,8 @@ html5_crew:
     - html5_collision_boundary_logic_engineer
     - html5_game_state_engineer
     - html5_game_tester
-    - html5_sound_engineer
+    - html5_game_sound_engineer
+    - html5_sound_designer
     - html5_game_rules_engineer
     - html5_game_unifier_engineer
     - html5_game_reviewer
