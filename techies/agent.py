@@ -2,8 +2,10 @@ from techies.fixture_loader import load_fixture
 from techies.tools import get_all_tools
 from crewai import Agent as _Agent
 
+from agentops import track_agent
 
 
+@track_agent()
 class Agent(_Agent):
     @staticmethod
     def eager_load_all(**extra_kwargs):
